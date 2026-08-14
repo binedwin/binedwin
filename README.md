@@ -16,6 +16,16 @@
 
 ---
 
+## AI Usage
+
+<div align="center">
+
+<a href="https://github.com/TOKENPHAGE"><img src="https://api.tokenphage.com/badge/binedwin?theme=gpu&amp;mode=dark" width="100%" alt="binedwin AI token usage" /></a>
+
+</div>
+
+---
+
 ## 📡 GitHub Signals
 
 <div align="center">
