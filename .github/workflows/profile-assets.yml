@@ -2,10 +2,13 @@ name: Update Profile Assets
 
 on:
   workflow_dispatch:
+
   schedule:
     - cron: "17 3 * * *"
+
   push:
-    branches: [main]
+    branches:
+      - main
     paths:
       - "scripts/generate_profile_assets.py"
       - ".github/workflows/profile-assets.yml"
@@ -13,23 +16,37 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: profile-assets
+  cancel-in-progress: true
+
 jobs:
   profile-assets:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate profile SVG assets
+      - name: Generate Pixel Robot contribution graph and GitHub Signals
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/generate_profile_assets.py
 
-      - name: Commit updated assets
+      - name: Commit generated SVG files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add output/contribution-galaxy.svg output/github-signals.svg
-          git diff --cached --quiet && exit 0
-          git commit -m "Update profile assets"
-          git push
+
+          git add \
+            output/pixel-robot-contributions.svg \
+            output/github-signals.svg
+
+          if git diff --cached --quiet; then
+            echo "No profile asset changes."
+            exit 0
+          fi
+
+          git commit -m "Update profile animations"
+          git pull --rebase origin main
+          git push origin main

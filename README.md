@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/binedwin/binedwin/main/assets/hero.svg" width="100%" alt="Lee Jeongbin night sky profile banner" />
+<img src="./assets/hero.svg" width="100%" alt="Lee Jeongbin night sky profile banner" />
 
 <br/><br/>
 
@@ -10,16 +10,22 @@
 
 ---
 
-## ✨ Contribution Galaxy
+## 🤖 Pixel Robot Night Walk
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/binedwin/binedwin/main/output/contribution-galaxy.svg?v=3" width="100%" alt="Contribution Galaxy" />
+
+<img src="./output/pixel-robot-contributions.svg" width="100%" alt="Pixel Robot walking across my GitHub contribution graph" />
+
+<sub>My real GitHub contribution graph — the little robot walks across the activity I have built over the last year.</sub>
+
 </div>
 
 ---
 
-## 📊 GitHub Signals
+## 📡 GitHub Signals
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/binedwin/binedwin/main/output/github-signals.svg?v=3" width="100%" alt="GitHub Signals" />
+
+<img src="./output/github-signals.svg" width="100%" alt="GitHub Signals" />
+
 </div>
