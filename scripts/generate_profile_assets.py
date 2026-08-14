@@ -107,7 +107,6 @@ def generate_pixel_robot_contributions(calendar):
         "#E0F2FE",
     ]
 
-    random.seed(20260814)
     cells = []
 
     for week_index, week in enumerate(weeks):
@@ -115,43 +114,27 @@ def generate_pixel_robot_contributions(calendar):
             level = level_map.get(day["contributionLevel"], 0)
             count = day["contributionCount"]
 
-            x = left + week_index * pitch
-            y = top + day_index * pitch
-
-            if count > 0:
-                glow = ' filter="url(#cellGlow)"' if level >= 3 else ""
-                cells.append(
-                    f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="3" '
-                    f'fill="{colors[level]}"{glow}>'
-                    f'<title>{day["date"]} - {count} contributions</title>'
-                    f'</rect>'
-                )
+            if count == 0:
                 continue
 
-            twinkles = random.random() < 0.12
-            animation = ""
-            fill = colors[0]
-            opacity = 0.72
-
-            if twinkles:
-                fill = random.choice(colors[1:4])
-                duration = random.uniform(6.5, 10.5)
-                delay = random.uniform(-10.5, 0.0)
-                peak = random.uniform(0.72, 0.94)
-                opacity = 0.08
-                animation = (
-                    f'<animate attributeName="opacity" '
-                    f'values="0.08;0.08;{peak:.2f};0.08;0.08" '
-                    f'keyTimes="0;.40;.50;.60;1" '
-                    f'dur="{duration:.2f}s" begin="{delay:.2f}s" '
-                    f'repeatCount="indefinite"/>'
-                )
+            x = left + week_index * pitch
+            y = top + day_index * pitch
+            phase = (week_index * 2 + day_index) % 6
+            delay = -(phase * 2)
+            low_opacity = 0.28 + level * 0.04
+            peak_opacity = min(1.0, 0.78 + level * 0.06)
+            glow = ' filter="url(#cellGlow)"' if level >= 3 else ""
 
             cells.append(
                 f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="3" '
-                f'fill="{fill}" opacity="{opacity:.2f}">'
-                f'<title>{day["date"]} - 0 contributions</title>'
-                f'{animation}</rect>'
+                f'fill="{colors[level]}"{glow} opacity="{low_opacity:.2f}">'
+                f'<title>{day["date"]} - {count} contributions</title>'
+                f'<animate attributeName="opacity" '
+                f'values="{low_opacity:.2f};{low_opacity:.2f};{peak_opacity:.2f};'
+                f'{low_opacity:.2f};{low_opacity:.2f}" '
+                f'keyTimes="0;.44;.50;.56;1" dur="12s" begin="{delay}s" '
+                f'repeatCount="indefinite"/>'
+                f'</rect>'
             )
 
     random.seed(2026)
@@ -209,19 +192,11 @@ width="{width}" height="{height}" viewBox="0 0 {width} {height}">
 
 {''.join(stars)}
 
-<text x="72" y="46"
-  fill="#F8FAFC"
-  font-family="Arial,sans-serif"
-  font-size="24"
-  font-weight="700">
-  PIXEL ROBOT NIGHT WALK
-</text>
-
-<text x="72" y="72"
+<text x="72" y="50"
   fill="#94A3B8"
   font-family="monospace"
   font-size="12">
-  {escape(USERNAME)} - {total} real contributions / quiet stars fill the empty nights
+  {escape(USERNAME)} - {total} real contributions / alternating lights follow my activity
 </text>
 
 <g>

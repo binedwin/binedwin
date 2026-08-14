@@ -6,13 +6,11 @@
 
 ---
 
-## 🤖 Pixel Robot Night Walk
-
 <div align="center">
 
-<img src="./output/pixel-robot-contributions.svg" width="100%" alt="Pixel Robot walking across my contribution graph with quiet twinkling stars" />
+<img src="./output/pixel-robot-contributions.svg" width="100%" alt="Pixel Robot walking across my alternating contribution lights" />
 
-<sub>My real contribution graph, with a few quiet stars twinkling across the empty nights.</sub>
+<sub>Only my real contribution cells, lighting up in a quiet alternating rhythm.</sub>
 
 </div>
 
