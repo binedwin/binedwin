@@ -20,13 +20,19 @@
 <circle class="star d2" cx="585" cy="48" r="1.2"/><circle class="star d3" cx="705" cy="76" r="1.5"/><circle class="star" cx="832" cy="54" r="1.2"/>
 <circle class="star d1" cx="930" cy="106" r="1.7"/><circle class="star d2" cx="1056" cy="64" r="1.2"/><circle class="star" cx="1138" cy="128" r="1.4"/>
 </g>
-<g transform="translate(860 150)" stroke="#7DD3FC" stroke-opacity=".24" stroke-width="1.2" fill="none">
-<path d="M0 38 L70 0 L132 44 L204 18 L246 76 L174 112 L98 86 L38 132"/>
+<g transform="translate(884 112)" stroke="#7DD3FC" stroke-opacity=".28" stroke-width="1.2" fill="none">
+<path d="M92 0 L82 48 L100 88 L44 126 L0 158 M100 88 L148 128 L218 158"/>
 </g>
-<g transform="translate(860 150)">
-<circle cx="0" cy="38" r="3.1" fill="#BAE6FD"/><circle cx="70" cy="0" r="2.5" fill="#DDD6FE"/><circle cx="132" cy="44" r="3.8" fill="#7DD3FC"/>
-<circle cx="204" cy="18" r="2.8" fill="#A7F3D0"/><circle cx="246" cy="76" r="3.1" fill="#C4B5FD"/><circle cx="174" cy="112" r="2.4" fill="#BAE6FD"/>
-<circle cx="98" cy="86" r="3.5" fill="#67E8F9"/><circle cx="38" cy="132" r="2.7" fill="#DDD6FE"/>
+<g transform="translate(884 112)">
+<circle class="star d1" cx="92" cy="0" r="2.7" fill="#DDD6FE"/><circle class="star" cx="82" cy="48" r="2.5" fill="#BAE6FD"/>
+<circle class="star d2" cx="100" cy="88" r="3.7" fill="#67E8F9"/><circle class="star d3" cx="44" cy="126" r="2.5" fill="#C4B5FD"/>
+<circle class="star" cx="0" cy="158" r="3.2" fill="#A7F3D0"/><circle class="star d1" cx="148" cy="128" r="2.8" fill="#BAE6FD"/>
+<circle class="star d2" cx="218" cy="158" r="3.5" fill="#7DD3FC"/>
+<g fill="#E0F2FE" opacity=".7">
+<circle cx="91" cy="66" r="1.1"/><circle cx="98" cy="63" r=".8"/><circle cx="104" cy="69" r="1"/>
+<circle cx="94" cy="72" r=".7"/><circle cx="101" cy="76" r=".9"/><circle cx="108" cy="73" r=".6"/>
+</g>
+<text x="218" y="184" text-anchor="end" fill="#64748B" font-family="monospace" font-size="10">CANCER · Cnc</text>
 </g>
 <g class="meteor"><line x1="0" y1="0" x2="180" y2="0" stroke="#7DD3FC" stroke-opacity=".65" stroke-width="3"/><circle cx="180" cy="0" r="3.5" fill="#fff"/></g>
 <g transform="translate(88 128)">

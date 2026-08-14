@@ -28,7 +28,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate Pixel Robot contribution graph and GitHub Signals
+      - name: Generate Pixel Robot star field and GitHub Signals
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/generate_profile_assets.py

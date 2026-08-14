@@ -78,10 +78,7 @@ def get_contribution_calendar():
     ]["contributionsCollection"]["contributionCalendar"]
 
 
-def generate_pixel_robot_contributions(calendar):
-    weeks = calendar["weeks"]
-    total = calendar["totalContributions"]
-
+def generate_pixel_robot_starfield():
     width = 1200
     height = 390
 
@@ -91,14 +88,6 @@ def generate_pixel_robot_contributions(calendar):
     gap = 6
     pitch = cell + gap
 
-    level_map = {
-        "NONE": 0,
-        "FIRST_QUARTILE": 1,
-        "SECOND_QUARTILE": 2,
-        "THIRD_QUARTILE": 3,
-        "FOURTH_QUARTILE": 4,
-    }
-
     colors = [
         "#111827",
         "#164E63",
@@ -107,24 +96,34 @@ def generate_pixel_robot_contributions(calendar):
         "#E0F2FE",
     ]
 
+    grid_weeks = 53
+    random.seed(20260814)
     cells = []
 
-    for week_index, week in enumerate(weeks):
-        for day_index, day in enumerate(week["contributionDays"]):
-            level = level_map.get(day["contributionLevel"], 0)
-            count = day["contributionCount"]
+    for week_index in range(grid_weeks):
+        for day_index in range(7):
+            level = random.choices(
+                range(5),
+                weights=(50, 24, 14, 8, 4),
+                k=1,
+            )[0]
 
             x = left + week_index * pitch
             y = top + day_index * pitch
 
-            glow = ""
-            if level >= 3:
-                glow = ' filter="url(#cellGlow)"'
+            duration = random.uniform(1.8, 5.2)
+            delay = random.uniform(-5.0, 0.0)
+            low_opacity = random.uniform(0.18, 0.38)
+            high_opacity = random.uniform(0.72, 1.0)
+            glow = ' filter="url(#cellGlow)"' if level >= 3 else ""
 
             cells.append(
                 f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="3" '
-                f'fill="{colors[level]}"{glow}>'
-                f'<title>{day["date"]} - {count} contributions</title>'
+                f'fill="{colors[level]}"{glow} opacity="{low_opacity:.2f}">'
+                f'<animate attributeName="opacity" '
+                f'values="{low_opacity:.2f};{high_opacity:.2f};{low_opacity:.2f}" '
+                f'dur="{duration:.2f}s" begin="{delay:.2f}s" '
+                f'repeatCount="indefinite"/>'
                 f'</rect>'
             )
 
@@ -144,7 +143,7 @@ def generate_pixel_robot_contributions(calendar):
 
     robot_y = top + 7 * pitch + 38
     start_x = left - 10
-    end_x = left + (len(weeks) - 1) * pitch + cell
+    end_x = left + (grid_weeks - 1) * pitch + cell
 
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg"
 width="{width}" height="{height}" viewBox="0 0 {width} {height}">
@@ -188,14 +187,14 @@ width="{width}" height="{height}" viewBox="0 0 {width} {height}">
   font-family="Arial,sans-serif"
   font-size="24"
   font-weight="700">
-  PIXEL ROBOT NIGHT WALK
+  PIXEL ROBOT STAR WALK
 </text>
 
 <text x="72" y="72"
   fill="#94A3B8"
   font-family="monospace"
   font-size="12">
-  {escape(USERNAME)} - {total} real contributions in the last year
+  {escape(USERNAME)} - a randomly twinkling pixel night
 </text>
 
 <g>
@@ -537,7 +536,7 @@ width="1200" height="340" viewBox="0 0 1200 340">
 def main():
     calendar = get_contribution_calendar()
 
-    generate_pixel_robot_contributions(calendar)
+    generate_pixel_robot_starfield()
     generate_github_signals(calendar)
 
     print("Updated:")
