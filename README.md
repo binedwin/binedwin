@@ -6,13 +6,13 @@
 
 ---
 
-## 🤖 Pixel Robot Star Walk
+## 🤖 Pixel Robot Night Walk
 
 <div align="center">
 
-<img src="./output/pixel-robot-contributions.svg" width="100%" alt="Pixel Robot walking across a randomly twinkling star field" />
+<img src="./output/pixel-robot-contributions.svg" width="100%" alt="Pixel Robot walking across my contribution graph with quiet twinkling stars" />
 
-<sub>A little pixel robot walking through a field of randomly twinkling stars.</sub>
+<sub>My real contribution graph, with a few quiet stars twinkling across the empty nights.</sub>
 
 </div>
 
