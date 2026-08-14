@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#030712"/><stop offset=".52" stop-color="#0B1020"/><stop offset="1" stop-color="#111827"/></linearGradient>
+<filter id="blur"><feGaussianBlur stdDeviation="22"/></filter>
+<style>
+.star{fill:#fff;animation:tw 4s ease-in-out infinite}.d1{animation-delay:-1.3s}.d2{animation-delay:-2.6s}.d3{animation-delay:-3.4s}
+.meteor{animation:shoot 9s linear infinite;transform-box:view-box;transform-origin:center}
+@keyframes tw{0%,100%{opacity:.2}50%{opacity:1}}
+@keyframes shoot{0%,66%{transform:translate(-500px,-140px);opacity:0}69%{opacity:1}80%{transform:translate(1280px,300px);opacity:0}100%{transform:translate(1280px,300px);opacity:0}}
+</style>
+</defs>
+<rect width="1200" height="360" rx="28" fill="url(#sky)"/>
+<g filter="url(#blur)" opacity=".8">
+<path d="M-100 120 C160 10 350 190 580 90 S980 40 1320 110" stroke="#22D3EE" stroke-opacity=".18" stroke-width="60" fill="none"/>
+<path d="M-80 180 C180 80 420 220 650 140 S1000 80 1290 160" stroke="#A78BFA" stroke-opacity=".15" stroke-width="48" fill="none"/>
+</g>
+<g>
+<circle class="star d1" cx="80" cy="65" r="1.8"/><circle class="star" cx="145" cy="118" r="1.1"/><circle class="star d2" cx="220" cy="54" r="1.5"/>
+<circle class="star d3" cx="315" cy="102" r="1.3"/><circle class="star d1" cx="395" cy="52" r="1.1"/><circle class="star" cx="490" cy="92" r="1.6"/>
+<circle class="star d2" cx="585" cy="48" r="1.2"/><circle class="star d3" cx="705" cy="76" r="1.5"/><circle class="star" cx="832" cy="54" r="1.2"/>
+<circle class="star d1" cx="930" cy="106" r="1.7"/><circle class="star d2" cx="1056" cy="64" r="1.2"/><circle class="star" cx="1138" cy="128" r="1.4"/>
+</g>
+<g transform="translate(860 150)" stroke="#7DD3FC" stroke-opacity=".24" stroke-width="1.2" fill="none">
+<path d="M0 38 L70 0 L132 44 L204 18 L246 76 L174 112 L98 86 L38 132"/>
+</g>
+<g transform="translate(860 150)">
+<circle cx="0" cy="38" r="3.1" fill="#BAE6FD"/><circle cx="70" cy="0" r="2.5" fill="#DDD6FE"/><circle cx="132" cy="44" r="3.8" fill="#7DD3FC"/>
+<circle cx="204" cy="18" r="2.8" fill="#A7F3D0"/><circle cx="246" cy="76" r="3.1" fill="#C4B5FD"/><circle cx="174" cy="112" r="2.4" fill="#BAE6FD"/>
+<circle cx="98" cy="86" r="3.5" fill="#67E8F9"/><circle cx="38" cy="132" r="2.7" fill="#DDD6FE"/>
+</g>
+<g class="meteor"><line x1="0" y1="0" x2="180" y2="0" stroke="#7DD3FC" stroke-opacity=".65" stroke-width="3"/><circle cx="180" cy="0" r="3.5" fill="#fff"/></g>
+<g transform="translate(88 128)">
+<text fill="#F8FAFC" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="48" font-weight="700" letter-spacing="2">LEE JEONGBIN</text>
+<text y="46" fill="#7DD3FC" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="600">ROBOT SOFTWARE DEVELOPER</text>
+<text y="84" fill="#CBD5E1" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" letter-spacing="2.3">ROBOTICS · VISION · AI</text>
+<text y="122" fill="#94A3B8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-style="italic">Building intelligent systems that interact with the real world.</text>
+</g>
+</svg>

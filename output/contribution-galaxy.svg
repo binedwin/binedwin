@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300">
+<defs><linearGradient id="sky"><stop stop-color="#030712"/><stop offset="1" stop-color="#111827"/></linearGradient>
+<style>.s{fill:#fff;animation:t 4s ease-in-out infinite}@keyframes t{0%,100%{opacity:.2}50%{opacity:1}}</style></defs>
+<rect width="1200" height="300" rx="24" fill="url(#sky)"/>
+<circle class="s" cx="170" cy="190" r="2"/><circle class="s" cx="260" cy="130" r="3"/><circle class="s" cx="350" cy="176" r="2.5"/>
+<circle class="s" cx="460" cy="116" r="4"/><circle class="s" cx="590" cy="178" r="2.8"/><circle class="s" cx="720" cy="126" r="3.7"/>
+<circle class="s" cx="840" cy="188" r="2.3"/><circle class="s" cx="950" cy="132" r="3.2"/><circle class="s" cx="1040" cy="178" r="2.6"/>
+<path d="M170 190 L260 130 L350 176 L460 116 L590 178 L720 126 L840 188 L950 132 L1040 178" fill="none" stroke="#7DD3FC" stroke-opacity=".23"/>
+<text x="70" y="62" fill="#F8FAFC" font-family="Arial" font-size="25" font-weight="700">CONTRIBUTION GALAXY</text>
+<text x="70" y="88" fill="#94A3B8" font-family="monospace" font-size="12">Run GitHub Actions once to map your real contribution stars.</text>
+<text x="1130" y="270" text-anchor="end" fill="#64748B" font-family="monospace" font-size="11">Every commit becomes a star.</text>
+</svg>

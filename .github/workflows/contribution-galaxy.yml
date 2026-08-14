@@ -1,0 +1,35 @@
+name: Update Contribution Galaxy
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/generate_galaxy.py"
+      - ".github/workflows/contribution-galaxy.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  galaxy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate contribution galaxy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/generate_galaxy.py
+
+      - name: Commit updated galaxy
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output/contribution-galaxy.svg
+          git diff --cached --quiet && exit 0
+          git commit -m "Update contribution galaxy"
+          git push
