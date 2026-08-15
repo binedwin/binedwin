@@ -16,10 +16,18 @@
 
 ---
 
-## 📡 GitHub Signals
+## AI Tool Usage
 
 <div align="center">
 
-<img src="./output/github-signals.svg" width="100%" alt="GitHub Signals" />
+<a href="https://github.com/TOKENPHAGE">
+  <img src="https://api.tokenphage.com/badge/binedwin?theme=gpu&mode=dark"
+       width="540"
+       alt="TokenPhage AI token usage badge" />
+</a>
+
+<br/>
+
+<sub>Codex local token usage, aggregated by date and model.</sub>
 
 </div>

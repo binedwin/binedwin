@@ -28,7 +28,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate Pixel Robot contribution stars and GitHub Signals
+      - name: Generate Pixel Robot contribution stars
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/generate_profile_assets.py
@@ -38,9 +38,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add \
-            output/pixel-robot-contributions.svg \
-            output/github-signals.svg
+          git add output/pixel-robot-contributions.svg
 
           if git diff --cached --quiet; then
             echo "No profile asset changes."
