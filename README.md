@@ -8,6 +8,16 @@
 
 <div align="center">
 
+<a href="https://binedwin.github.io/Portfolio/">
+  <img src="./assets/portfolio.svg" width="100%" alt="Open Lee Jeongbin's Robot Software Developer portfolio" />
+</a>
+
+</div>
+
+---
+
+<div align="center">
+
 <img src="./output/pixel-robot-contributions.svg" width="100%" alt="Pixel Robot walking across my alternating contribution lights" />
 
 <sub>Only my real contribution cells, lighting up in a quiet alternating rhythm.</sub>
